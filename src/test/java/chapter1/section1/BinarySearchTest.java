@@ -1,4 +1,4 @@
-package chapter1;
+package chapter1.section1;
 
 import edu.princeton.cs.algs4.In;
 import org.junit.Before;

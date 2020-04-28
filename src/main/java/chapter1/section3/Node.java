@@ -1,8 +1,8 @@
-package chapter1;
+package chapter1.section3;
 
 /*
-* Node class for implementing Queue class
-* */
+ * Node class for implementing Queue class
+ * */
 class Node<Item> {
     private Item item;
     private Node<Item> next;

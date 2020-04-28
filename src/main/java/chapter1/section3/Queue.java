@@ -1,6 +1,5 @@
-package chapter1;
+package chapter1.section3;
 
-import java.util.Arrays;
 import java.util.Iterator;
 
 /*

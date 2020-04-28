@@ -1,4 +1,4 @@
-package chapter1;
+package chapter1.section2;
 
 import edu.princeton.cs.algs4.StdRandom;
 import org.junit.Before;

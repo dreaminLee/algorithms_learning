@@ -1,6 +1,5 @@
-package chapter1;
+package chapter1.section3;
 
-import edu.princeton.cs.algs4.In;
 import org.junit.Test;
 
 import java.util.Iterator;
@@ -35,7 +34,7 @@ public class StackTest {
         for (int j = 0; j < expressions.length; j++) {
             String[] tokens = expressions[j].split(" ");
             for (String s : tokens) {
-                if (s.equals("("));
+                if (s.equals("(")) ;
                 else if (s.equals("+")) ops.push(s);
                 else if (s.equals("-")) ops.push(s);
                 else if (s.equals("*")) ops.push(s);

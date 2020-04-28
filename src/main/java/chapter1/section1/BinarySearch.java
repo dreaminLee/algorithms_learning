@@ -1,4 +1,4 @@
-package chapter1;
+package chapter1.section1;
 
 public class BinarySearch {
     public static int rank(int key, int[] a) {

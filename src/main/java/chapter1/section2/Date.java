@@ -1,4 +1,4 @@
-package chapter1;
+package chapter1.section2;
 
 public class Date implements Comparable<Date> {
     private final int month;

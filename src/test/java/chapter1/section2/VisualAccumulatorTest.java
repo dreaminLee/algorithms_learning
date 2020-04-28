@@ -1,4 +1,4 @@
-package chapter1;
+package chapter1.section2;
 
 import org.junit.Before;
 import org.junit.Test;
