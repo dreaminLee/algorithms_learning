@@ -14,7 +14,7 @@ public class MatrixTest {
     double[][] m1_t = {{1, 2, 3, 4}, {5, 6, 7, 8}};
     double[] m1v1 = {30, 70};
     double[] v2m1 = {11, 14, 17, 20};
-    double[][] m1m1_t = {{30, 70},{70, 174}};
+    double[][] m1m1_t = {{30, 70}, {70, 174}};
 
     double precision = 0.0001;
 
