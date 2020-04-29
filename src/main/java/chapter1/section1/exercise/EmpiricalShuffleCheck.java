@@ -5,14 +5,19 @@ import edu.princeton.cs.algs4.StdRandom;
 // exercise 1.1.36: Empirical shuffle check
 
 public class EmpiricalShuffleCheck {
-    public static void check(int N, int M) {
+
+    public interface ShuffleFunc {
+        void shuffle(int[] array);
+    }
+
+    public static void check(int N, int M, ShuffleFunc shuffleFunc) {
         int[] array = new int[M];
         int[][] table = new int[M][M];
 
         for (int i = 0; i < N; i++) {
-            for (int j = 0; j < M;j++)
+            for (int j = 0; j < M; j++)
                 array[j] = j;
-            StdRandom.shuffle(array);
+            shuffleFunc.shuffle(array);
             for (int j = 0; j < M; j++)
                 for (int k = 0; k < M; k++)
                     if (array[j] == k)
@@ -28,6 +33,6 @@ public class EmpiricalShuffleCheck {
     }
 
     public static void main(String[] args) {
-        check(500000, 10);
+        check(500000, 5, StdRandom::shuffle);
     }
 }
