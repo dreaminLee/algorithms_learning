@@ -9,8 +9,8 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 public class BinarySearchTest {
-    int[] datalist = new In("D:\\Codes\\java_workspace\\Algorithm\\algs4-data\\largeW.txt").readAllInts();
-    int[] findlist = new In("D:\\Codes\\java_workspace\\Algorithm\\algs4-data\\largeT.txt").readAllInts();
+    int[] datalist = new In("..\\algs4-data\\largeW.txt").readAllInts();
+    int[] findlist = new In("..\\algs4-data\\largeT.txt").readAllInts();
 
     @Before
     public void sortDatalist() {
