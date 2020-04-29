@@ -36,6 +36,10 @@ public class Stack<Item> implements Iterable<Item> {
         if (size == capacity) expand(); // if Stack is full, double capacity
     }
 
+    public Item peek() {
+        return items[size - 1];
+    }
+
     public Item pop() {
         size--;
         return items[size];
