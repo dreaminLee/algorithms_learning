@@ -1,41 +1,43 @@
 package chapter2.section1;
 
-import edu.princeton.cs.algs4.StdRandom;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 import static chapter2.section1.Sort.sortTime;
 import static org.junit.Assert.assertTrue;
+import static util.ArrayOperations.randomDoubleArray;
 
 
 public class SortTest {
-    Double[] a;
-    int len = 50000;
+    Double[][] arrays;
+    int N = 1000;
+    int len = 2000;
 
     @Before
     public void initArray() {
-        a = new Double[len];
-        for (int i = 0; i < len; i++) {
-            a[i] = StdRandom.uniform();
+        arrays = new Double[N][];
+        for (int i = 0; i < N; i++) {
+            arrays[i] = randomDoubleArray(len);
         }
-        Arrays.sort(a);
+    }
+
+    public double sortArraysTime(SortAlgorithm sortAlgorithm) {
+        double totalTime = 0.0;
+        for (Double[] i : arrays) {
+            totalTime += sortTime(sortAlgorithm, Arrays.copyOf(i, i.length));
+        }
+        return totalTime / N;
     }
 
     @Test
     public void SelectionSortTest() {
-        Double[] t = Arrays.copyOf(a, len);
-        System.out.println(sortTime(SelectionSort::sort, t));
-        assertTrue(Sort.isSorted(t));
+        System.out.println(sortArraysTime(SelectionSort::sort));
     }
 
     @Test
     public void InsertionSortTest() {
-        Double[] t = Arrays.copyOf(a, len);
-        System.out.println(InsertionSort.countInversion(t));
-        System.out.println(sortTime(InsertionSort::sort, t));
-        assertTrue(Sort.isSorted(t));
+        System.out.println(sortArraysTime(InsertionSort::sort));
     }
 }
