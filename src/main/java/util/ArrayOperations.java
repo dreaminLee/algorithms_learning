@@ -30,9 +30,9 @@ public class ArrayOperations {
      * @param a array
      * @return return true if all elements have the same class type
      */
-    public static boolean isSameClass(Comparable[] a) {
-        Class cls = a[0].getClass();
-        for (Comparable i : a) {
+    public static boolean isSameClass(Comparable<?>[] a) {
+        Class<?> cls = a[0].getClass();
+        for (Comparable<?> i : a) {
             if (cls != i.getClass()) return false;
         }
         return true;

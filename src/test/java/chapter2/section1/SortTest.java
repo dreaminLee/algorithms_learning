@@ -1,14 +1,12 @@
 package chapter2.section1;
 
-import edu.princeton.cs.algs4.Shell;
+import org.apache.commons.lang3.ArrayUtils;
 import org.junit.Before;
 import org.junit.Test;
-import util.ArrayOperations;
 
 import java.util.Arrays;
 
 import static chapter2.section1.Sort.sortTime;
-import static org.junit.Assert.assertTrue;
 import static util.ArrayOperations.randomDoubleArray;
 
 
@@ -18,11 +16,19 @@ public class SortTest {
     int len = 5000;
 
     @Before
-    public void initArray() {
+    public void initArrays() {
         arrays = new Double[N][];
         for (int i = 0; i < N; i++) {
             arrays[i] = randomDoubleArray(len);
         }
+    }
+
+    public Double[] concat2SortedArrays(int size1, int size2) {
+        Double[] t1 = randomDoubleArray(size1);
+        Double[] t2 = randomDoubleArray(size2);
+        Arrays.sort(t1);
+        Arrays.sort(t2);
+        return ArrayUtils.addAll(t1, t2);
     }
 
     public double sortArraysTime(SortAlgorithm sortAlgorithm) {

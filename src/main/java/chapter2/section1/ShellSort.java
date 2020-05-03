@@ -1,7 +1,7 @@
 package chapter2.section1;
 
 public class ShellSort extends Sort {
-    public static void sort(Comparable[] a) {
+    public static void sort(Comparable<?>[] a) {
         int len = a.length;
         int h = 1;
         while (h < len / 3) h = 3 * h + 1;
@@ -15,11 +15,11 @@ public class ShellSort extends Sort {
         }
     }
 
-    public static void sort2(Comparable[] a) {
+    public static void sort2(Comparable<?>[] a) {
         int len = a.length;
         int h = 1;
         while (h < len / 3) h = 3 * h + 1;
-        Comparable x;
+        Comparable<?> x;
         while (h >= 1) {
             for (int i = h; i < len; i++) {
                 x = a[i];

@@ -1,7 +1,7 @@
 package chapter2.section1;
 
 public class InsertionSort extends Sort {
-    public static void sort(Comparable[] a) {
+    public static void sort(Comparable<?>[] a) {
         int len = a.length;
         for (int i = 1; i < len; i++) {
             for (int j = i; j > 0 && less(a[j], a[j - 1]); j--)
@@ -9,9 +9,9 @@ public class InsertionSort extends Sort {
         }
     }
 
-    public static void sort2(Comparable[] a) {
+    public static void sort2(Comparable<?>[] a) {
         int len = a.length;
-        Comparable x;
+        Comparable<?> x;
         for (int i = 1; i < len; i++) {
             x = a[i];
             int j = i - 1;
@@ -24,7 +24,7 @@ public class InsertionSort extends Sort {
     }
 
     // insertion sort is most efficient when the number of inversions is low
-    public static int countInversion(Comparable[] a) {
+    public static int countInversion(Comparable<?>[] a) {
         int len = a.length, cnt = 0;
         for (int i = 0; i < len; i++) {
             for (int j = i + 1; j < len; j++) {

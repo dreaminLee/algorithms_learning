@@ -14,12 +14,12 @@ public class Queue<Item> implements Iterable<Item> {
 
     public Queue() {
         size = 0;
-        first = new Node<Item>(null, null);
+        first = new Node<>(null, null);
         last = first;
     }
 
     public void enqueue(Item item) {
-        Node<Item> n = new Node<Item>(item, null);
+        Node<Item> n = new Node<>(item, null);
         last.setNext(n);
         last = n;
         size++;

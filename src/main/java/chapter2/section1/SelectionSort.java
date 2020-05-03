@@ -1,7 +1,7 @@
 package chapter2.section1;
 
 public class SelectionSort extends Sort {
-    public static void sort(Comparable[] a) {
+    public static void sort(Comparable<?>[] a) {
         int len = a.length;
         int smallest_index;
         for (int i = 0; i < len; i++) {

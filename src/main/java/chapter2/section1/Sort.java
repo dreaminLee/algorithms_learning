@@ -3,23 +3,26 @@ package chapter2.section1;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StopwatchCPU;
 
+import java.util.Collection;
+import java.util.Collections;
+
 public abstract class Sort {
     // implement class Sort with a new static method called void sort(Comparable[] a)
 
-    public static void show(Comparable[] a) {
-        for (Comparable i : a) {
+    public static void show(Comparable<?>[] a) {
+        for (Comparable<?> i : a) {
             StdOut.print(i + " ");
         }
         StdOut.println();
     }
 
-    public static double sortTime(SortAlgorithm sortAlgorithm, Comparable[] a) {
+    public static double sortTime(SortAlgorithm sortAlgorithm, Comparable<?>[] a) {
         StopwatchCPU stopwatchCPU = new StopwatchCPU();
         sortAlgorithm.sort(a);
         return stopwatchCPU.elapsedTime();
     }
 
-    public static boolean isSorted(Comparable[] a) {
+    public static boolean isSorted(Comparable<?>[] a) {
         for (int i = 1; i < a.length; i++)
             if (less(a[i], a[i - 1])) return false;
         return true;
@@ -29,8 +32,8 @@ public abstract class Sort {
         return v.compareTo(w) < 0;
     }
 
-    protected static void exch(Comparable[] a, int i, int j) {
-        Comparable t = a[i];
+    protected static void exch(Comparable<?>[] a, int i, int j) {
+        Comparable<?> t = a[i];
         a[i] = a[j];
         a[j] = t;
     }
