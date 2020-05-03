@@ -3,6 +3,14 @@ package chapter2.section1;
 public class InsertionSort extends Sort {
     public static void sort(Comparable[] a) {
         int len = a.length;
+        for (int i = 1; i < len; i++) {
+            for (int j = i; j > 0 && less(a[j], a[j - 1]); j--)
+                exch(a, j, j - 1);
+        }
+    }
+
+    public static void sort2(Comparable[] a) {
+        int len = a.length;
         Comparable x;
         for (int i = 1; i < len; i++) {
             x = a[i];
