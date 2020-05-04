@@ -2,20 +2,27 @@ package chapter2.section1;
 
 public class InsertionSort extends Sort {
     public static void sort(Comparable<?>[] a) {
-        int len = a.length;
-        for (int i = 1; i < len; i++) {
-            for (int j = i; j > 0 && less(a[j], a[j - 1]); j--)
+        sort(a, 0, a.length - 1);
+    }
+
+    public static void sort(Comparable<?>[] a, int lo, int hi) {
+        for (int i = lo + 1; i <= hi; i++) {
+            for (int j = i; j > lo && less(a[j], a[j - 1]); j--) {
                 exch(a, j, j - 1);
+            }
         }
     }
 
     public static void sort2(Comparable<?>[] a) {
-        int len = a.length;
+        sort2(a, 0, a.length - 1);
+    }
+
+    public static void sort2(Comparable<?>[] a, int lo, int hi) {
         Comparable<?> x;
-        for (int i = 1; i < len; i++) {
+        for (int i = lo + 1; i <= hi; i++) {
             x = a[i];
             int j = i - 1;
-            while (j >= 0 && less(x, a[j])) {
+            while (j >= lo && less(x, a[j])) {
                 a[j + 1] = a[j];
                 j--;
             }

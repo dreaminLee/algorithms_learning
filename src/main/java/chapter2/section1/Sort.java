@@ -3,9 +3,6 @@ package chapter2.section1;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StopwatchCPU;
 
-import java.util.Collection;
-import java.util.Collections;
-
 public abstract class Sort {
     // implement class Sort with a new static method called void sort(Comparable[] a)
 
@@ -30,6 +27,14 @@ public abstract class Sort {
 
     protected static boolean less(Comparable v, Comparable w) {
         return v.compareTo(w) < 0;
+    }
+
+    protected static boolean noGreaterThan(Comparable v, Comparable w) {
+        return v.compareTo(w) <= 0;
+    }
+
+    protected static int compare(Comparable v, Comparable w) {
+        return v.compareTo(w);
     }
 
     protected static void exch(Comparable<?>[] a, int i, int j) {
